@@ -17,3 +17,8 @@ Thumbs.db
 # Python caches from repository checks
 __pycache__/
 *.py[cod]
+# The four deliberate, reviewed counter artifacts are kept in the repository.
+!incoming-counter-build/v23gen2.hex
+!incoming-counter-build/v23gen2.bin
+!incoming-counter-build/v23gen2.elf
+!incoming-counter-build/v23gen2.map
