@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">mikey:hexoid-sys emblem</title>
+  <desc id="desc">Hexagonal signal emblem for POWERED BY [mikey:hexoid-sys] projects by Yogesh R. Chauhan (mikey-7x). GitHub: https://github.com/mikey-7x</desc>
+  <defs>
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#24f7ff"/>
+      <stop offset="0.52" stop-color="#4f8cff"/>
+      <stop offset="1" stop-color="#b15cff"/>
+    </linearGradient>
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="190" fill="#071426"/>
+  <g filter="url(#glow)">
+    <polygon points="512,82 886,298 886,726 512,942 138,726 138,298" fill="#08172c" stroke="url(#signal)" stroke-width="34" stroke-linejoin="round"/>
+    <polygon points="512,170 802,342 802,682 512,854 222,682 222,342" fill="none" stroke="#79efff" stroke-opacity="0.28" stroke-width="9" stroke-linejoin="round"/>
+    <path d="M238 610 H371 L442 356 L534 724 L622 282 L700 610 H796" fill="none" stroke="url(#signal)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#e9fdff" stroke="#27dcff" stroke-width="11">
+      <circle cx="371" cy="610" r="28"/><circle cx="442" cy="356" r="28"/>
+      <circle cx="534" cy="724" r="28"/><circle cx="622" cy="282" r="28"/>
+      <circle cx="700" cy="610" r="28"/>
+    </g>
+    <g fill="#0a142b" stroke="#59e9ff" stroke-width="11">
+      <circle cx="512" cy="82" r="30"/><circle cx="886" cy="298" r="30"/>
+      <circle cx="886" cy="726" r="30"/><circle cx="512" cy="942" r="30"/>
+      <circle cx="138" cy="726" r="30"/><circle cx="138" cy="298" r="30"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+  <title id="title">POWERED BY [mikey:hexoid-sys]</title>
+  <desc id="desc">Official powered-by logo of Yogesh R. Chauhan (mikey-7x) for advanced mikey:hexoid-sys projects. GitHub: https://github.com/mikey-7x</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071426"/>
+      <stop offset="0.55" stop-color="#0b1026"/>
+      <stop offset="1" stop-color="#160b2e"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#24f7ff"/>
+      <stop offset="0.52" stop-color="#4f8cff"/>
+      <stop offset="1" stop-color="#b15cff"/>
+    </linearGradient>
+    <linearGradient id="hexStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#32f6ff"/>
+      <stop offset="0.55" stop-color="#4f7cff"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#57d7ff" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect x="8" y="8" width="1584" height="504" rx="46" fill="url(#panel)"/>
+  <rect x="8" y="8" width="1584" height="504" rx="46" fill="url(#grid)"/>
+  <rect x="8" y="8" width="1584" height="504" rx="46" fill="none" stroke="#38e8ff" stroke-opacity="0.55" stroke-width="2"/>
+
+  <!-- Circuit traces -->
+  <g fill="none" stroke="#35d5ff" stroke-opacity="0.22" stroke-width="3">
+    <path d="M490 452 H645 L690 410 H812"/>
+    <path d="M1038 74 H1192 L1234 116 H1386"/>
+    <path d="M1290 438 H1422 L1465 395"/>
+  </g>
+  <g fill="#0b1026" stroke="#45e7ff" stroke-width="3">
+    <circle cx="490" cy="452" r="8"/>
+    <circle cx="812" cy="410" r="8"/>
+    <circle cx="1038" cy="74" r="8"/>
+    <circle cx="1386" cy="116" r="8"/>
+    <circle cx="1290" cy="438" r="8"/>
+  </g>
+
+  <!-- Hexoid signal emblem -->
+  <g filter="url(#softGlow)">
+    <polygon points="228,58 383,150 383,370 228,462 73,370 73,150"
+             fill="#071224" fill-opacity="0.82" stroke="url(#hexStroke)" stroke-width="13" stroke-linejoin="round"/>
+    <polygon points="228,94 348,164 348,356 228,426 108,356 108,164"
+             fill="none" stroke="#79efff" stroke-opacity="0.25" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M116 296 H171 L201 190 L239 342 L276 164 L309 296 H348"
+          fill="none" stroke="url(#signal)" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#e9fdff" stroke="#27dcff" stroke-width="4">
+      <circle cx="171" cy="296" r="10"/>
+      <circle cx="201" cy="190" r="10"/>
+      <circle cx="239" cy="342" r="10"/>
+      <circle cx="276" cy="164" r="10"/>
+      <circle cx="309" cy="296" r="10"/>
+    </g>
+    <g fill="#0a142b" stroke="#59e9ff" stroke-width="4">
+      <circle cx="228" cy="58" r="11"/>
+      <circle cx="383" cy="150" r="11"/>
+      <circle cx="383" cy="370" r="11"/>
+      <circle cx="228" cy="462" r="11"/>
+      <circle cx="73" cy="370" r="11"/>
+      <circle cx="73" cy="150" r="11"/>
+    </g>
+  </g>
+
+  <!-- Lockup text -->
+  <text x="486" y="153" font-family="Verdana, 'DejaVu Sans', Arial, sans-serif"
+        font-size="43" font-weight="700" letter-spacing="13" fill="#4be9ff">POWERED BY</text>
+
+  <text x="478" y="278" font-family="'DejaVu Sans', Verdana, Arial, sans-serif"
+        font-size="90" font-weight="700" letter-spacing="-3" fill="url(#signal)">[mikey:hexoid-sys]</text>
+
+  <line x1="488" y1="318" x2="1474" y2="318" stroke="url(#signal)" stroke-width="4" stroke-opacity="0.8"/>
+
+  <text x="488" y="379" font-family="Verdana, 'DejaVu Sans', Arial, sans-serif"
+        font-size="31" font-weight="700" letter-spacing="5" fill="#d7e9ff">
+    BY <tspan fill="#ffffff">mikey-7x</tspan><tspan fill="#5eeaff">  •  </tspan><tspan>ADVANCED EMBEDDED SYSTEMS</tspan>
+  </text>
+</svg>
