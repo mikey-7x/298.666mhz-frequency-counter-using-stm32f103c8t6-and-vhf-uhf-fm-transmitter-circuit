@@ -1,7 +1,7 @@
 # 298.666mhz frequency counter using stm32f103c8t6 & vhf/uhf fm transmitter circuit
 
 <p align="center">
-  <img src="assets/powered-by-mikey-hexoid-sys.png" alt="POWERED BY [mikey:hexoid-sys]" width="920">
+  <img src="assets/project-title-logo.png" alt="298.666 MHz frequency counter using STM32F103C8T6 and VHF/UHF FM transmitter circuit — POWERED BY [mikey:hexoid-sys]" width="920">
 </p>
 
 <p align="center">
@@ -60,6 +60,7 @@
 - [Operating the counter](#operating-the-counter)
 - [Recommended verification sequence](#recommended-verification-sequence)
 - [Repository layout](#repository-layout)
+- [Official brand assets](#official-brand-assets)
 - [Licence, credit and commercial use](#licence-credit-and-commercial-use)
 - [About the author](#about-the-author)
 - [Safety and legal notice](#safety-and-legal-notice)
@@ -454,6 +455,25 @@ A reusable record sheet is provided in [`docs/test-record.csv`](docs/test-record
 └── tools/
     └── verify_repository.py
 ```
+
+---
+
+## Official brand assets
+
+The project-title logo at the top, the main attribution logo in [NOTICE.md](NOTICE.md), the compact author-credit logo at the bottom, and the social-preview layout below all use the same **POWERED BY [mikey:hexoid-sys]** emblem with transparent surroundings:
+
+<p align="center">
+  <img src="assets/github-social-preview.png" alt="Transparent POWERED BY [mikey:hexoid-sys] social preview" width="440">
+</p>
+
+| Use | PNG image | SVG container |
+|---|---|---|
+| Project-title logo in the README header | [Project-title PNG](assets/project-title-logo.png) | — |
+| Main attribution logo | [Main PNG](assets/powered-by-mikey-hexoid-sys.png) | [Main SVG](assets/powered-by-mikey-hexoid-sys.svg) |
+| Compact author-credit logo | [Square PNG](assets/mikey-hexoid-sys-mark.png) | [Square SVG](assets/mikey-hexoid-sys-mark.svg) |
+| GitHub social preview | [Social-preview PNG](assets/github-social-preview.png) | — |
+
+The SVG files embed raster artwork; they are not fully editable vector illustrations. For link previews, upload the social-preview PNG in **Settings → General → Social preview**; adding a file to `assets/` does not change that setting.
 
 ---
 
