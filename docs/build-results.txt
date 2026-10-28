@@ -50,8 +50,18 @@ SHA-256
 fa289129330796d70386d354676d30cbc6738ffcefad3534f05f9e8891b4a5d0  firmware/frequency_counter/frequency_counter.ino
 97be085b0368ab86d0e2886a4f54d40079b5e96072c6dd5b78b37d97aacebaf7  firmware/frequency_generator/frequency_generator.ino
 3105d71a35f45e4c67f90666730b9bbbd348f424ff3eb2ffdbf37f326971ad3a  LICENSE
-5b251e4178db4420018d7b284d59d4e4a1ab007fe69c853c7aa54b903d1e5708  README.md
+e5bf1cfd31e10d59bc35dd84c6f0c4e86b3a326cd4154e34e6c420386fbc1e6e  README.md
 e5153035664a06c2062ef8856acfe1ea1fd51d4469888145c5cc4f9c94cb5353  NOTICE.md
 61502d4eee54e975d794fc059f9da111636ff27632142a528781cfcc7729836e  assets/powered-by-mikey-hexoid-sys.svg
 4f43fcb4557eab027e1d8ca3ee6df4450b3d0f542c6b15e9b88ee5f797fbe293  hardware/complete-circuit-diagram.png
 7aa59029399f1866316f9e85da4f485601eb5fabb0d45c7404e71652450a938c  docs/oled-startup-photo.jpg
+
+Precompiled counter cross-check
+The author's HEX and BIN matched a controlled build of the current source with
+the extracted mhex_e.sh compile function, Arduino CLI 1.5.2-rc.1, STM32duino
+3.0.0 and the BLUEPILL_F103C8,usb=HID option. The controlled default USB
+setting without HID also compiled but produced a different image; this does
+not establish its hardware behaviour. The four user files are retained
+byte-for-byte. ELF flash load bytes match the BIN; all HEX-addressed bytes
+match, with four HEX alignment holes represented as zero padding in the BIN.
+These are file/build checks, not a new physical measurement or calibration.

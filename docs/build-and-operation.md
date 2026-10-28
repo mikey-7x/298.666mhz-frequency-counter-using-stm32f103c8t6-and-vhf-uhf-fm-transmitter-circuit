@@ -3,6 +3,10 @@
 **POWERED BY [mikey:hexoid-sys]**  
 Created by **mikey-7x** — Yogesh R. Chauhan
 
+## Author's Android build and flash workflow
+
+For mikey:hexoid v5.0.0, BluePill board ID 40, the four precompiled counter artifacts and ZFlasher STM32 with ST-LINK/V2, follow the [mikey:hexoid and ZFlasher guide](mikey-hexoid-and-zflasher.md). The precompiled HEX is for the counter only; the generator requires its own build. This guide keeps the existing Arduino CLI examples below as an alternative.
+
 ## Build both sketches
 
 From the repository root:

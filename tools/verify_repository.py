@@ -77,6 +77,14 @@ for path in (
     ".github/pull_request_template.md",
     "docs/theory-and-limits.md",
     "docs/build-and-operation.md",
+    "docs/mikey-hexoid-and-zflasher.md",
+    "incoming-counter-build/README.md",
+    "incoming-counter-build/SHA256SUMS",
+    "incoming-counter-build/v23gen2.hex",
+    "incoming-counter-build/v23gen2.bin",
+    "incoming-counter-build/v23gen2.elf",
+    "incoming-counter-build/v23gen2.map",
+    "tools/verify_precompiled.py",
     "docs/transmitter-notes.md",
     "docs/validation-checklist.md",
     "docs/build-results.txt",
@@ -139,6 +147,9 @@ check("startup presentation can retry after OLED recovery", "startupArmed && sta
 check("startup logo stage completes only after a successful frame", "if (!pushScreen()) return false;" in counter and "startupStage=1u;" in counter)
 check("startup self-test stage completes only after a successful frame", "startupStage=2u;" in counter)
 check("README links FM-radio demonstration", "https://youtu.be/2F3CqLfh4eI" in readme)
+check("README links author build tool", "https://github.com/mikey-7x/mikey-hexoid-v5.0.0/tree/main" in readme)
+check("README links Android flashing guide", "docs/mikey-hexoid-and-zflasher.md" in readme)
+check("workflow verifies precompiled artifacts", "python3 tools/verify_precompiled.py" in text(".github/workflows/firmware-builds.yml"))
 check("README displays actual OLED startup photo", 'src="docs/oled-startup-photo.jpg"' in readme)
 check("OLED photo is a JPEG", (ROOT / "docs/oled-startup-photo.jpg").is_file() and (ROOT / "docs/oled-startup-photo.jpg").read_bytes().startswith(b"\xff\xd8\xff"))
 check("build guide links OLED startup photo", "oled-startup-photo.jpg" in text("docs/build-and-operation.md"))

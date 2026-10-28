@@ -79,5 +79,9 @@
   ],
   "demonstration_video_url": "https://youtu.be/2F3CqLfh4eI",
   "oled_startup_photo": "docs/oled-startup-photo.jpg",
-  "oled_startup_preview": "docs/oled-startup-preview.png"
+  "oled_startup_preview": "docs/oled-startup-preview.png",
+  "author_build_tool_url": "https://github.com/mikey-7x/mikey-hexoid-v5.0.0/tree/main",
+  "flashing_tool": "ZFlasher STM32 with ST-LINK/V2 over SWD",
+  "counter_precompiled_folder": "incoming-counter-build",
+  "counter_precompiled_flash_base": "0x08000000"
 }

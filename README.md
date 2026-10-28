@@ -58,6 +58,7 @@
 - [Frequency-counter firmware](#frequency-counter-firmware)
 - [Frequency-generator firmware](#frequency-generator-firmware)
 - [VHF/UHF FM transmitter notes](#vhfuhf-fm-transmitter-notes)
+- [Precompiled counter and Android flashing](#precompiled-counter-and-android-flashing)
 - [Building and flashing](#building-and-flashing)
 - [Operating the counter](#operating-the-counter)
 - [Recommended verification sequence](#recommended-verification-sequence)
@@ -365,11 +366,23 @@ Transistor pinout varies by package and manufacturer. Verify the exact 2N2222 de
 
 ---
 
+## Precompiled counter and Android flashing
+
+The author's four original counter files are available in [the precompiled counter folder](incoming-counter-build/README.md): [HEX](incoming-counter-build/v23gen2.hex), [BIN](incoming-counter-build/v23gen2.bin), [ELF](incoming-counter-build/v23gen2.elf) and [MAP](incoming-counter-build/v23gen2.map). On GitHub, open the HEX and use **Download raw file**. The HEX is for the **counter board only**; do not flash it to the generator.
+
+For a quick upload, connect your known-working ST-LINK/V2 to the counter and Android phone through OTG. In **ZFlasher STM32**, select the counter HEX and the write/program operation, then tap **Go!**. Verify the operation if available. Flashing overwrites program contents; keep any required backup first. The HEX contains addresses. The BIN is a raw image intended for `0x08000000`; the ELF and MAP are for analysis, not this flashing procedure. The counter uses an experimental 112 MHz default clock, above the MCU's 72 MHz rating.
+
+To compile your own counter or generator with [mikey:hexoid v5.0.0](https://github.com/mikey-7x/mikey-hexoid-v5.0.0/tree/main), use **Compile Project (Universal)** and BluePill F103C8 board ID **40**. The tool's default USB option differs from the author's verified image; read the [short build and ZFlasher guide](docs/mikey-hexoid-and-zflasher.md) before building or flashing. No extra Arduino libraries are needed by these sketches.
+
+The published HEX and BIN match an independently reproduced build of the present counter with the documented HID build option. The ELF load bytes match the BIN; the HEX contains the same addressed bytes but omits four padding bytes. The project verifier checks the artifact integrity. These checks and `SELF PASS` do not establish frequency accuracy.
+
+---
+
 ## Building and flashing
 
 ### Toolchain
 
-- Arduino IDE or Arduino CLI with the STM32duino STM32 core.
+- mikey:hexoid v5.0.0 (the author's workflow), Arduino IDE, or Arduino CLI with the STM32duino STM32 core.
 - Board family: Generic STM32F1 series.
 - Board part: BluePill F103C8.
 - USB interface used for the repository build checks: HID.
@@ -466,6 +479,13 @@ A reusable record sheet is provided in [`docs/test-record.csv`](docs/test-record
 │   ├── powered-by-mikey-hexoid-sys.png
 │   ├── mikey-hexoid-sys-mark.svg
 │   └── mikey-hexoid-sys-mark.png
+├── incoming-counter-build/
+│   ├── README.md
+│   ├── SHA256SUMS
+│   ├── v23gen2.hex
+│   ├── v23gen2.bin
+│   ├── v23gen2.elf
+│   └── v23gen2.map
 ├── firmware/
 │   ├── frequency_counter/
 │   │   └── frequency_counter.ino
@@ -478,6 +498,7 @@ A reusable record sheet is provided in [`docs/test-record.csv`](docs/test-record
 ├── docs/
 │   ├── theory-and-limits.md
 │   ├── build-and-operation.md
+│   ├── mikey-hexoid-and-zflasher.md
 │   ├── transmitter-notes.md
 │   ├── validation-checklist.md
 │   ├── build-results.txt
@@ -485,7 +506,8 @@ A reusable record sheet is provided in [`docs/test-record.csv`](docs/test-record
 │   ├── oled-startup-photo.jpg
 │   └── test-record.csv
 └── tools/
-    └── verify_repository.py
+    ├── verify_repository.py
+    └── verify_precompiled.py
 ```
 
 ---
