@@ -39,6 +39,10 @@ Leave at `0.0` until the board's reference oscillator has been measured against 
 
 With default settings the generator starts at 1 Hz and advances every 15 seconds through the normal-clock exact table ending at 36 MHz.
 
+### Original requested diagnostic list
+
+Setting `SWEEP_MODE` to `1` selects the original requested list. On its normal 72 MHz timer clock, entries through 1 MHz are supported, but 10, 20, 27, 33, 50, 68, 72 and 80 MHz are unsupported: the firmware forces PA8 LOW and repeats four flashes at each unsupported step. It does not generate those requested frequencies. This mode cannot be combined with `TOP_EXPERIMENT_64MHZ` or fixed diagnostics.
+
 ### Optional 40–64 MHz steps
 
 Change only this setting:
@@ -48,6 +52,10 @@ Change only this setting:
 ```
 
 The automatic sequence then appends 40, 48, 56 and 64 MHz. These use experimental core clocks. The 64 MHz step runs in SRAM while the core is at 128 MHz, then restores 72 MHz before flash execution resumes.
+
+PB12 is ignored during the SRAM-isolated 64 MHz step. During an automatic sweep the step returns after its timed dwell. If the step is entered while paused, it holds indefinitely and PB12 cannot resume it; reset or power-cycle the generator to leave that state. In fixed 64 MHz diagnostic mode it also holds until reset or power-off. Do not assume the normal button controls work during this step.
+
+The table uses exact nominal timer-divisor settings, not a guarantee of absolute output frequency: oscillator tolerance, clock stability and experimental overclocking affect the physical result. Verify important frequencies independently.
 
 ### Fixed diagnostics
 
