@@ -16,7 +16,10 @@ jobs:
 
       - name: Verify branding, licence and documentation
         run: python3 tools/verify_repository.py
-
+        
+      - name: Verify precompiled counter artifacts
+        run: python3 tools/verify_precompiled.py
+    
       - name: Install Arduino CLI
         uses: arduino/setup-arduino-cli@v2
 
