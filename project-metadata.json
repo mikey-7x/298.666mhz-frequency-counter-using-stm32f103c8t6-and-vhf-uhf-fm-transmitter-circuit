@@ -76,5 +76,8 @@
     "uhf",
     "fm-transmitter",
     "rf-electronics"
-  ]
+  ],
+  "demonstration_video_url": "https://youtu.be/2F3CqLfh4eI",
+  "oled_startup_photo": "docs/oled-startup-photo.jpg",
+  "oled_startup_preview": "docs/oled-startup-preview.png"
 }

@@ -19,6 +19,18 @@ arduino-cli compile \
 
 In Arduino IDE, select the Generic STM32F1 family and BluePill F103C8. Choose the upload method that matches your programmer. No project library needs to be installed from Library Manager.
 
+## Startup logo
+
+The 0.96-inch SSD1306 displays a custom 128×64 one-bit pixel-art adaptation of the supplied logo at startup for `LOGO_SPLASH_MS` (default 3000 ms). The lettering is drawn using the same 5×8 pixel font as the existing display text. If the OLED is not ready during setup, the logo and self-test screens remain pending and are shown once the screen is recovered. Set `LOGO_SPLASH_MS` to `0` to skip that image. The next screen retains the full `POWERED BY [mikey:hexoid-sys]` text, self-test and clock information. The subsequent measurement and `NO SIGNAL` screens are unchanged. The bitmap is compiled into the sketch; no external library or separate file is needed. Small details and metallic shading cannot be reproduced exactly at this display resolution. [View the enlarged pixel-accurate preview](oled-startup-preview.png).
+
+### Hardware startup observation
+
+![Actual SSD1306 OLED showing the updated startup logo](oled-startup-photo.jpg)
+
+The photo shows the actual OLED displaying the readable logo. The author reported that the following `SELF PASS` screen appeared correctly; it is not pictured here. This observation does not establish measurement accuracy or maximum frequency. The image pixels are preserved without recompression; camera metadata was removed for publication. [See the enlarged bitmap preview](oled-startup-preview.png).
+
+To adjust the splash, edit the single `#define LOGO_SPLASH_MS 3000u` in `firmware/frequency_counter/frequency_counter.ino`, save, compile and reflash the counter. The value is milliseconds: `3000u` is 3 seconds. Leave it unchanged to keep the displayed behaviour. The compiled bitmap is not loaded from the JPEG or preview image.
+
 ## Counter settings
 
 ### `COUNTER_CLOCK_MHZ`

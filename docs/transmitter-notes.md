@@ -5,6 +5,10 @@ Created by **mikey-7x** — Yogesh R. Chauhan
 
 These notes transcribe and explain the test-oscillator section of the author's hand-drawn sheet. They are included so the circuit used to exercise the counter remains part of the project record.
 
+## Author's FM-radio verification video
+
+[Watch the demonstration on YouTube](https://youtu.be/2F3CqLfh4eI). The author compares the OLED counter reading of the FM transmitter with reception on a keypad phone's FM radio. The phone's tuning steps and receiver accuracy limit the precision of that check; it does not validate the counter's upper experimental range.
+
 ## Safety and legality first
 
 An FM transmitter can interfere with licensed radio services. Do not connect an antenna or radiate a signal unless the operator, equipment, frequency, bandwidth, power and emissions are authorised in the place of operation. For counter development, use a properly rated dummy load or a shielded, controlled bench setup and keep the output contained.

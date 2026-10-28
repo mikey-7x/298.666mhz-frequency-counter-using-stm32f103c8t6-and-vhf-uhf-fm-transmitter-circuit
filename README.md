@@ -24,6 +24,7 @@
 | Author GitHub profile | [https://github.com/mikey-7x](https://github.com/mikey-7x) |
 | Author repository catalogue | [https://github.com/mikey-7x?tab=repositories](https://github.com/mikey-7x?tab=repositories) |
 | Author YouTube channel | [https://youtube.com/@mikey-7x](https://youtube.com/@mikey-7x) |
+| FM-radio verification video | [Watch the demonstration](https://youtu.be/2F3CqLfh4eI) |
 | Author blog | [https://rtod-yv8.blogspot.com/?m=1](https://rtod-yv8.blogspot.com/?m=1) |
 
 ## Project highlights
@@ -50,6 +51,8 @@
 - [Complete circuit diagram](#complete-circuit-diagram)
 - [System architecture](#system-architecture)
 - [Counter range and theory](#counter-range-and-theory)
+- [OLED startup photo](#oled-startup-photo)
+- [Demonstration video](#demonstration-video)
 - [Author's recorded bench evidence](#authors-recorded-bench-evidence)
 - [Wiring](#wiring)
 - [Frequency-counter firmware](#frequency-counter-firmware)
@@ -148,6 +151,26 @@ A 1 GHz input remains 125 MHz after ETR/8. That would require a timer clock of a
 
 ---
 
+## OLED startup photo
+
+<p align="center">
+  <img src="docs/oled-startup-photo.jpg" alt="Photograph of the real SSD1306 OLED displaying the readable POWERED BY [mikey:hexoid-sys] startup logo" width="620">
+</p>
+
+The author's photo shows the updated pixel-art logo on the actual 0.96-inch SSD1306 display. The author also reported that the subsequent `SELF PASS` screen appeared correctly; that screen is not shown in this photograph. The logo uses the display's single-colour pixels, not the silver shading of the original artwork. [View the full photograph](docs/oled-startup-photo.jpg) or compare it with the [pixel-accurate simulation](docs/oled-startup-preview.png).
+
+A successful startup/self-test confirms the observed startup sequence, not frequency accuracy or the counter's maximum operating range. Test measurements separately with a suitable reference.
+
+---
+
+## Demonstration video
+
+[![Watch the counter and FM-radio demonstration](https://img.youtube.com/vi/2F3CqLfh4eI/hqdefault.jpg)](https://youtu.be/2F3CqLfh4eI)
+
+[Watch the separate FM-radio demonstration on YouTube](https://youtu.be/2F3CqLfh4eI): the author shows the counter reading an FM transmitter and then checks reception at the displayed frequency using a keypad phone's FM radio. Radio tuning resolution and accuracy limit this comparison; it is not proof of performance at 192 MHz or the calculated 298.666 MHz ceiling. Use RF equipment lawfully and in a controlled setup.
+
+---
+
 ## Author's recorded bench evidence
 
 The following values are retained in the project documentation because they allow the raw arithmetic to be checked independently:
@@ -218,7 +241,7 @@ Source: [`firmware/frequency_counter/frequency_counter.ino`](firmware/frequency_
 
 ### Identity shown by the firmware
 
-At startup, the OLED displays:
+At startup, the OLED first shows a custom 128×64 monochrome pixel-art adaptation of the supplied logo for 3 seconds once the screen is ready. It uses clean isometric outlines and readable pixel lettering. The one-bit screen cannot reproduce the original silver shading or all fine details. If the OLED initializes late, the startup screens are retried when it recovers. [View the enlarged pixel-accurate OLED preview](docs/oled-startup-preview.png). The following existing self-test screen displays the exact branding in text:
 
 ```text
 POWERED BY
@@ -236,6 +259,7 @@ During measurement, the header reads `mikey-7x COUNTER`. The source header and e
 |---|---:|---|
 | `COUNTER_CLOCK_MHZ` | `112` | 112 MHz proven high-VHF configuration; 96 MHz comparison; 72 MHz normal clock |
 | `CAL_PPM` | `0.0` | Optional reference-clock correction only; never use it to disguise dropped counts |
+| `LOGO_SPLASH_MS` | `3000` | Startup image duration in milliseconds; set `0` to skip it |
 | `GATE_MS` | `1000` | Primary precision gate |
 | `HIGH_TRACK_GATE_MS` | `100` | Fast high-range reacquisition gate |
 | `HIGH_GATE_MS` | `250` | High-range precision retry gate |
@@ -457,6 +481,8 @@ A reusable record sheet is provided in [`docs/test-record.csv`](docs/test-record
 │   ├── transmitter-notes.md
 │   ├── validation-checklist.md
 │   ├── build-results.txt
+│   ├── oled-startup-preview.png
+│   ├── oled-startup-photo.jpg
 │   └── test-record.csv
 └── tools/
     └── verify_repository.py

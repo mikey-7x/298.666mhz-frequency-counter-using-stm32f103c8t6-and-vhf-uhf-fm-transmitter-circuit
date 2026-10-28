@@ -6,40 +6,52 @@ Project: https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f10
 
 Target: STMicroelectronics:stm32:GenF1:pnum=BLUEPILL_F103C8,usb=HID
 Compiler setting: --warnings all
+Arduino CLI: 1.5.2-rc.1
+STM32duino core: STMicroelectronics:stm32 3.0.0
 Result: all listed builds completed with zero warnings.
 
 Counter default 112 MHz
-  Flash:   37148 bytes
+  Flash:   38408 bytes
   Globals: 2964 bytes
 
 Counter variant 96 MHz
-  Flash:   37136 bytes
-  Globals: 2960 bytes
+  Flash:   38392 bytes
+  Globals: 2964 bytes
 
 Counter variant 72 MHz
-  Flash:   36800 bytes
-  Globals: 2960 bytes
+  Flash:   38056 bytes
+  Globals: 2964 bytes
 
 Generator default normal sweep
-  Flash:   18208 bytes
+  Flash:   18192 bytes
   Globals: 1616 bytes
 
 Generator experimental top sweep to 64 MHz
-  Flash:   19384 bytes
+  Flash:   19368 bytes
   Globals: 2220 bytes
 
 Generator fixed 64 MHz diagnostic
-  Flash:   18880 bytes
+  Flash:   18864 bytes
   Globals: 2204 bytes
 
 Embedded identity found in both default ELF images:
-POWERED BY [mikey:hexoid-sys] | Author: Yogesh R. Chauhan (mikey-7x) | Also known as: Chauhan Yogeshkumar R. | GitHub: https://github.com/mikey-7x | Repositories: https://github.com/mikey-7x?tab=repositories | Project: https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit | YouTube: https://youtube.com/@mikey-7x | Blog: https://rtod-yv8.blogspot.com/?m=1 | Copyright (c) 2026 Yogesh R. Chauhan (mikey-7x). All rights reserved. | Licence: mikey-7x Strict Personal & Educational Use Licence
+POWERED BY [mikey:hexoid-sys]
+Author: Yogesh R. Chauhan (mikey-7x)
+Also known as: Chauhan Yogeshkumar R.
+GitHub: https://github.com/mikey-7x
+Repositories: https://github.com/mikey-7x?tab=repositories
+Project: https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit
+YouTube: https://youtube.com/@mikey-7x
+Blog: https://rtod-yv8.blogspot.com/?m=1
+Copyright (c) 2026 Yogesh R. Chauhan (mikey-7x). All rights reserved.
+Licence: mikey-7x Strict Personal & Educational Use Licence
 
 SHA-256
-24df5938287b313eb7fd4653752d81625f948801efdf0ea38a14e5690009a683  firmware/frequency_counter/frequency_counter.ino
-bec8de8cff0aa249fae40297cd8c8d16832a3e063e471e7083b756ecd09fe174  firmware/frequency_generator/frequency_generator.ino
+fa289129330796d70386d354676d30cbc6738ffcefad3534f05f9e8891b4a5d0  firmware/frequency_counter/frequency_counter.ino
+97be085b0368ab86d0e2886a4f54d40079b5e96072c6dd5b78b37d97aacebaf7  firmware/frequency_generator/frequency_generator.ino
 3105d71a35f45e4c67f90666730b9bbbd348f424ff3eb2ffdbf37f326971ad3a  LICENSE
-db99753a7ba6f680dc4fb4bc5c1e879dbbc078bdce4dc5a4ad4ff0ec8fd4bbba  README.md
+5b251e4178db4420018d7b284d59d4e4a1ab007fe69c853c7aa54b903d1e5708  README.md
 e5153035664a06c2062ef8856acfe1ea1fd51d4469888145c5cc4f9c94cb5353  NOTICE.md
 61502d4eee54e975d794fc059f9da111636ff27632142a528781cfcc7729836e  assets/powered-by-mikey-hexoid-sys.svg
 4f43fcb4557eab027e1d8ca3ee6df4450b3d0f542c6b15e9b88ee5f797fbe293  hardware/complete-circuit-diagram.png
+7aa59029399f1866316f9e85da4f485601eb5fabb0d45c7404e71652450a938c  docs/oled-startup-photo.jpg

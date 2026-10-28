@@ -131,6 +131,18 @@ for label, source in (("counter", counter), ("generator", generator)):
         re.search(r"\bV[0-9]{2}\b", source) is None,
     )
 
+# Startup artwork is embedded and the detailed self-test text remains present.
+check("counter includes one-bit startup logo", "OLED_LOGO_BITMAP[128u * 8u]" in counter)
+check("startup logo duration is configurable", "#define LOGO_SPLASH_MS 3000u" in counter)
+check("counter preserves self-test screen", 'startupSelfTestOK ? "SELF PASS" : "SELF FAIL"' in counter)
+check("startup presentation can retry after OLED recovery", "startupArmed && startupStage < 2u" in counter and "return showPendingStartup();" in counter)
+check("startup logo stage completes only after a successful frame", "if (!pushScreen()) return false;" in counter and "startupStage=1u;" in counter)
+check("startup self-test stage completes only after a successful frame", "startupStage=2u;" in counter)
+check("README links FM-radio demonstration", "https://youtu.be/2F3CqLfh4eI" in readme)
+check("README displays actual OLED startup photo", 'src="docs/oled-startup-photo.jpg"' in readme)
+check("OLED photo is a JPEG", (ROOT / "docs/oled-startup-photo.jpg").is_file() and (ROOT / "docs/oled-startup-photo.jpg").read_bytes().startswith(b"\xff\xd8\xff"))
+check("build guide links OLED startup photo", "oled-startup-photo.jpg" in text("docs/build-and-operation.md"))
+
 # Counter architecture invariants.
 for name, needle in (
     ("counter defaults to 112 MHz", "#define COUNTER_CLOCK_MHZ 112"),
@@ -265,7 +277,8 @@ for stem in ("powered-by-mikey-hexoid-sys", "mikey-hexoid-sys-mark"):
 # listed file changes; these checks do not claim to reproduce firmware builds.
 checksum_lines = re.findall(r"(?m)^([0-9a-f]{64})  ([^\r\n]+)$", text("docs/build-results.txt"))
 expected_paths = {COUNTER_PATH, GENERATOR_PATH, "LICENSE", "README.md", "NOTICE.md",
-                  "assets/powered-by-mikey-hexoid-sys.svg", "hardware/complete-circuit-diagram.png"}
+                  "assets/powered-by-mikey-hexoid-sys.svg", "hardware/complete-circuit-diagram.png",
+                  "docs/oled-startup-photo.jpg"}
 check("checksum record contains expected paths once", len(checksum_lines) == len(expected_paths) and {p for _, p in checksum_lines} == expected_paths)
 for digest, path in checksum_lines:
     try:

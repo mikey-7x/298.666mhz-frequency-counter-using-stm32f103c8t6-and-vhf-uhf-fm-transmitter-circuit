@@ -66,15 +66,15 @@
 #define HEXOID_LICENCE_NAME "mikey-7x Strict Personal & Educational Use Licence"
 static const char HEXOID_FIRMWARE_IDENTITY[] =
   HEXOID_POWERED_BY
-  " | Author: " HEXOID_AUTHOR_DISPLAY
-  " | Also known as: " HEXOID_AUTHOR_ALSO_KNOWN_AS
-  " | GitHub: " HEXOID_GITHUB_PROFILE_URL
-  " | Repositories: " HEXOID_GITHUB_REPOSITORIES_URL
-  " | Project: " HEXOID_REPOSITORY_URL
-  " | YouTube: " HEXOID_YOUTUBE_URL
-  " | Blog: " HEXOID_BLOG_URL
-  " | " HEXOID_COPYRIGHT
-  " | Licence: " HEXOID_LICENCE_NAME;
+  "\nAuthor: " HEXOID_AUTHOR_DISPLAY
+  "\nAlso known as: " HEXOID_AUTHOR_ALSO_KNOWN_AS
+  "\nGitHub: " HEXOID_GITHUB_PROFILE_URL
+  "\nRepositories: " HEXOID_GITHUB_REPOSITORIES_URL
+  "\nProject: " HEXOID_REPOSITORY_URL
+  "\nYouTube: " HEXOID_YOUTUBE_URL
+  "\nBlog: " HEXOID_BLOG_URL
+  "\n" HEXOID_COPYRIGHT
+  "\nLicence: " HEXOID_LICENCE_NAME;
 // setup() stores this pointer once so linker section garbage collection
 // cannot discard the attribution string from the compiled firmware.
 volatile const char *hexoidIdentityAnchor;
