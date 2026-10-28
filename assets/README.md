@@ -7,10 +7,10 @@ Created by **mikey-7x** — Yogesh R. Chauhan
 
 | File | Use |
 |---|---|
-| `powered-by-mikey-hexoid-sys.svg` | Preferred scalable wide logo for repositories, manuals and web pages |
-| `powered-by-mikey-hexoid-sys.png` | High-resolution wide logo for documents and presentations |
-| `mikey-hexoid-sys-mark.svg` | Scalable square emblem |
-| `mikey-hexoid-sys-mark.png` | Square emblem for avatars, covers and compact layouts |
+| `powered-by-mikey-hexoid-sys.svg` | SVG container for the integrated box logo (embedded raster artwork) |
+| `powered-by-mikey-hexoid-sys.png` | High-resolution integrated box logo for repositories and documents |
+| `mikey-hexoid-sys-mark.svg` | SVG container for the square integrated box logo (embedded raster artwork) |
+| `mikey-hexoid-sys-mark.png` | Square integrated box logo for avatars, covers and compact layouts |
 | `github-social-preview.png` | 1280×640 repository social-preview banner |
 
 ## Minimum attribution layout
