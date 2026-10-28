@@ -7,6 +7,7 @@ Created by **mikey-7x** — Yogesh R. Chauhan
 
 | File | Use |
 |---|---|
+| `project-title-logo.png` | Transparent project-title logo for the main README header |
 | `powered-by-mikey-hexoid-sys.svg` | Transparent-background main-logo SVG container (embedded raster artwork) |
 | `powered-by-mikey-hexoid-sys.png` | Transparent-background main PNG logo for repositories and documents |
 | `mikey-hexoid-sys-mark.svg` | Transparent-background square SVG container (embedded raster artwork) |
