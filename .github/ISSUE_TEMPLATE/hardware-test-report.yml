@@ -1,0 +1,51 @@
+name: Hardware test report
+description: Report a reproducible counter, generator or transmitter-oscillator result with raw evidence.
+title: "[Hardware test]: "
+labels: ["hardware-test"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **POWERED BY [mikey:hexoid-sys]** — Created by **mikey-7x** — Yogesh R. Chauhan
+
+        Please include raw counts and gate labels. A displayed number without its `N=` value is difficult to audit.
+  - type: input
+    id: board
+    attributes:
+      label: Board and MCU marking
+      placeholder: Blue Pill, STM32F103C8T6, source/clone details
+    validations:
+      required: true
+  - type: input
+    id: splash
+    attributes:
+      label: Counter splash SYSCLK and MAX lines
+      placeholder: SYSCLK 112MHZ EXP / MAX 298MHZ EXP
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Result and raw evidence
+      description: Include expected frequency, displayed value/unit, gate label, raw N and gate duration.
+      placeholder: "Expected: ...\nDisplayed: ...\nGate label: ...\nN: ..."
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Test setup
+      description: Source, waveform level, supply, CA/CB values if applicable, independent instrument and photographs.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I tested with PA0 disconnected and recorded the NO SIGNAL state.
+          required: true
+        - label: I did not change CAL_PPM to force the result.
+          required: true
+        - label: Any RF test was lawful and used a controlled bench setup.
+          required: true

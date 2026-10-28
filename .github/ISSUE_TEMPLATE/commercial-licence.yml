@@ -1,0 +1,30 @@
+name: Commercial licence enquiry
+description: Request permission for business, manufacturing or industrial use.
+title: "[Commercial licence]: "
+labels: ["commercial-licence"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Commercial and industrial use is **not** granted by the repository licence.
+        A separate signed written licence from **Yogesh R. Chauhan (mikey-7x)** is required before use.
+  - type: input
+    id: organisation
+    attributes:
+      label: Legal or business name
+    validations:
+      required: true
+  - type: textarea
+    id: use
+    attributes:
+      label: Intended use
+      description: Product/service, territory, quantity, duration, modifications and resources required.
+    validations:
+      required: true
+  - type: textarea
+    id: attribution
+    attributes:
+      label: Proposed attribution
+      description: Explain how mikey-7x, POWERED BY [mikey:hexoid-sys] and the logo will be displayed.
+    validations:
+      required: true

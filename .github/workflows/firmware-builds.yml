@@ -1,0 +1,57 @@
+name: Firmware build checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  arduino:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify branding, licence and documentation
+        run: python3 tools/verify_repository.py
+
+      - name: Install Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
+
+      - name: Install STM32 core
+        run: |
+          arduino-cli config init --overwrite
+          arduino-cli config add board_manager.additional_urls https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json
+          arduino-cli core update-index
+          arduino-cli core install STMicroelectronics:stm32
+
+      - name: Compile default counter and generator
+        env:
+          FQBN: STMicroelectronics:stm32:GenF1:pnum=BLUEPILL_F103C8,usb=HID
+        run: |
+          arduino-cli compile --warnings all --fqbn "$FQBN" firmware/frequency_counter
+          arduino-cli compile --warnings all --fqbn "$FQBN" firmware/frequency_generator
+
+      - name: Compile counter clock variants
+        env:
+          FQBN: STMicroelectronics:stm32:GenF1:pnum=BLUEPILL_F103C8,usb=HID
+        run: |
+          for mhz in 96 72; do
+            work="$(mktemp -d)"
+            cp -R firmware/frequency_counter "$work/frequency_counter"
+            sed -i "s/#define COUNTER_CLOCK_MHZ 112/#define COUNTER_CLOCK_MHZ $mhz/" "$work/frequency_counter/frequency_counter.ino"
+            arduino-cli compile --warnings all --fqbn "$FQBN" "$work/frequency_counter"
+          done
+
+      - name: Compile generator experimental variants
+        env:
+          FQBN: STMicroelectronics:stm32:GenF1:pnum=BLUEPILL_F103C8,usb=HID
+        run: |
+          work="$(mktemp -d)"
+          cp -R firmware/frequency_generator "$work/frequency_generator"
+          sed -i "s/#define TOP_EXPERIMENT_64MHZ 0/#define TOP_EXPERIMENT_64MHZ 1/" "$work/frequency_generator/frequency_generator.ino"
+          arduino-cli compile --warnings all --fqbn "$FQBN" "$work/frequency_generator"
+          sed -i "s/#define FIXED_TEST_64MHZ 0/#define FIXED_TEST_64MHZ 1/" "$work/frequency_generator/frequency_generator.ino"
+          arduino-cli compile --warnings all --fqbn "$FQBN" "$work/frequency_generator"
