@@ -13,9 +13,14 @@ replace, Arduino compilation and physical hardware testing.
 
 from __future__ import annotations
 
+import base64
+import hashlib
+from html.parser import HTMLParser
 import re
 import sys
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 CHECKS: list[tuple[str, bool]] = []
@@ -57,6 +62,8 @@ for path in (
     GENERATOR_PATH,
     "hardware/complete-circuit-diagram.png",
     "hardware/complete-circuit-diagram-enhanced.png",
+    "assets/project-title-logo.png",
+    "assets/README.md",
     "assets/powered-by-mikey-hexoid-sys.svg",
     "assets/powered-by-mikey-hexoid-sys.png",
     "assets/mikey-hexoid-sys-mark.svg",
@@ -219,6 +226,71 @@ check("metadata identifies canonical repository", repository_url in metadata_tex
 check("citation identifies author and alias", 'given-names: "Yogesh R."' in citation_text and 'alias: "mikey-7x"' in citation_text)
 check("authors file contains required credit", "Created by mikey-7x — Yogesh R. Chauhan" in authors_text)
 check("CODEOWNERS assigns repository to mikey-7x", "* @mikey-7x" in text("CODEOWNERS"))
+
+# Verify the actual image placements and all available logo references.
+for image in ("project-title-logo.png", "mikey-hexoid-sys-mark.png", "github-social-preview.png"):
+    check(f"README displays {image}", f'src="assets/{image}"' in readme)
+for asset in ("project-title-logo.png", "powered-by-mikey-hexoid-sys.png",
+              "powered-by-mikey-hexoid-sys.svg", "mikey-hexoid-sys-mark.png",
+              "mikey-hexoid-sys-mark.svg", "github-social-preview.png"):
+    check(f"README references {asset}", f"assets/{asset}" in readme)
+asset_readme_path = ROOT / "assets/README.md"
+asset_readme = asset_readme_path.read_text(encoding="utf-8") if asset_readme_path.is_file() else ""
+check("assets README describes brand assets", asset_readme.startswith("# Brand assets\n"))
+check("assets README lists project-title logo", "`project-title-logo.png`" in asset_readme)
+
+# PNG header verifies an alpha-capable RGBA image, not the shape of the mask.
+for name in ("project-title-logo.png", "powered-by-mikey-hexoid-sys.png",
+             "mikey-hexoid-sys-mark.png", "github-social-preview.png"):
+    try:
+        data = (ROOT / "assets" / name).read_bytes()
+        alpha = len(data) >= 26 and data[:8] == b"\x89PNG\r\n\x1a\n" and data[25] == 6
+    except OSError:
+        alpha = False
+    check(f"{name} is an RGBA PNG", alpha)
+
+# The two SVGs are image-backed containers and must embed their matching PNG.
+for stem in ("powered-by-mikey-hexoid-sys", "mikey-hexoid-sys-mark"):
+    try:
+        svg = ET.parse(ROOT / "assets" / (stem + ".svg")).getroot()
+        image = svg.find("{http://www.w3.org/2000/svg}image")
+        uri = image.get("{http://www.w3.org/1999/xlink}href", "") if image is not None else ""
+        prefix = "data:image/png;base64,"
+        matches = uri.startswith(prefix) and base64.b64decode(uri[len(prefix):], validate=True) == (ROOT / "assets" / (stem + ".png")).read_bytes()
+    except (OSError, ValueError, ET.ParseError):
+        matches = False
+    check(f"{stem}.svg embeds matching PNG", matches)
+
+# Catch stale recorded hashes. Update docs/build-results.txt whenever a
+# listed file changes; these checks do not claim to reproduce firmware builds.
+checksum_lines = re.findall(r"(?m)^([0-9a-f]{64})  ([^\r\n]+)$", text("docs/build-results.txt"))
+expected_paths = {COUNTER_PATH, GENERATOR_PATH, "LICENSE", "README.md", "NOTICE.md",
+                  "assets/powered-by-mikey-hexoid-sys.svg", "hardware/complete-circuit-diagram.png"}
+check("checksum record contains expected paths once", len(checksum_lines) == len(expected_paths) and {p for _, p in checksum_lines} == expected_paths)
+for digest, path in checksum_lines:
+    try:
+        valid = path in expected_paths and hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == digest
+    except OSError:
+        valid = False
+    check(f"recorded SHA-256 matches: {path}", valid)
+
+# Parse README HTML links as well as Markdown; GitHub displays images from HTML.
+class ReferenceParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.refs = []
+    def handle_starttag(self, tag, attrs):
+        for name, value in attrs:
+            if name in ("src", "href") and value:
+                self.refs.append(value)
+
+parser = ReferenceParser()
+parser.feed(readme)
+for ref in parser.refs:
+    uri = urlsplit(ref)
+    if uri.scheme or uri.netloc or not uri.path or uri.path.startswith("/"):
+        continue
+    check(f"README HTML target exists: {ref}", (ROOT / unquote(uri.path)).is_file())
 
 # Local Markdown links in public docs.  External links and same-page
 # anchors are intentionally ignored.
