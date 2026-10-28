@@ -8,3 +8,5 @@
 *.png binary
 *.jpg binary
 *.jpeg binary
+# Preserve the four author-supplied build artifacts byte-for-byte.
+incoming-counter-build/v23gen2.* -text
