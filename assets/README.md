@@ -7,11 +7,13 @@ Created by **mikey-7x** — Yogesh R. Chauhan
 
 | File | Use |
 |---|---|
-| `powered-by-mikey-hexoid-sys.svg` | SVG container for the integrated box logo (embedded raster artwork) |
-| `powered-by-mikey-hexoid-sys.png` | High-resolution integrated box logo for repositories and documents |
-| `mikey-hexoid-sys-mark.svg` | SVG container for the square integrated box logo (embedded raster artwork) |
-| `mikey-hexoid-sys-mark.png` | Square integrated box logo for avatars, covers and compact layouts |
-| `github-social-preview.png` | 1280×640 repository social-preview banner |
+| `powered-by-mikey-hexoid-sys.svg` | Transparent-background main-logo SVG container (embedded raster artwork) |
+| `powered-by-mikey-hexoid-sys.png` | Transparent-background main PNG logo for repositories and documents |
+| `mikey-hexoid-sys-mark.svg` | Transparent-background square SVG container (embedded raster artwork) |
+| `mikey-hexoid-sys-mark.png` | Transparent-background square PNG logo for compact layouts |
+| `github-social-preview.png` | 1280×640 transparent social-preview PNG of the same main logo |
+
+The PNG images have transparent surroundings. The silver emblem and its dark details are part of the logo. The SVG files embed raster images and are not fully editable vectors.
 
 ## Minimum attribution layout
 
