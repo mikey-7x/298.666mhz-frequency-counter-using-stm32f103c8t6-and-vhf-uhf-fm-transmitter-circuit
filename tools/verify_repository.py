@@ -148,6 +148,7 @@ check("startup logo stage completes only after a successful frame", "if (!pushSc
 check("startup self-test stage completes only after a successful frame", "startupStage=2u;" in counter)
 check("README links FM-radio demonstration", "https://youtu.be/2F3CqLfh4eI" in readme)
 check("README links author build tool", "https://github.com/mikey-7x/mikey-hexoid-v5.0.0/tree/main" in readme)
+check("README prominently credits the compilation tool", "**Compilation tool by mikey-7x:**" in readme and "| Compilation tool: mikey:hexoid v5.0.0 |" in readme)
 check("README links Android flashing guide", "docs/mikey-hexoid-and-zflasher.md" in readme)
 check("workflow verifies precompiled artifacts", "python3 tools/verify_precompiled.py" in text(".github/workflows/firmware-builds.yml"))
 check("README displays actual OLED startup photo", 'src="docs/oled-startup-photo.jpg"' in readme)

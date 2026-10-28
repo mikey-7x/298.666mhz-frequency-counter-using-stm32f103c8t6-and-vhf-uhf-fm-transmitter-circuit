@@ -16,6 +16,9 @@
 
 > A highly optimised STM32F103C8T6 frequency-measurement system containing a 298.666 MHz-class OLED counter, an exact automatic frequency generator for bench regression tests, and the author's VHF/UHF FM-transmitter circuit notes for lawful, controlled laboratory testing.
 
+> **Compilation tool by mikey-7x:** [mikey:hexoid v5.0.0 — open the GitHub repository](https://github.com/mikey-7x/mikey-hexoid-v5.0.0/tree/main)  
+> The author uses this tool to compile this project's STM32 firmware. It also supports selected AVR and FPGA workflows; available output formats depend on the target and toolchain. See the [build and flashing guide](docs/mikey-hexoid-and-zflasher.md).
+
 ## Official links
 
 | Destination | Link |
@@ -23,6 +26,7 @@
 | Official project repository | [https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit](https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit) |
 | Author GitHub profile | [https://github.com/mikey-7x](https://github.com/mikey-7x) |
 | Author repository catalogue | [https://github.com/mikey-7x?tab=repositories](https://github.com/mikey-7x?tab=repositories) |
+| Compilation tool: mikey:hexoid v5.0.0 | [https://github.com/mikey-7x/mikey-hexoid-v5.0.0/tree/main](https://github.com/mikey-7x/mikey-hexoid-v5.0.0/tree/main) |
 | Author YouTube channel | [https://youtube.com/@mikey-7x](https://youtube.com/@mikey-7x) |
 | FM-radio verification video | [Watch the demonstration](https://youtu.be/2F3CqLfh4eI) |
 | Author blog | [https://rtod-yv8.blogspot.com/?m=1](https://rtod-yv8.blogspot.com/?m=1) |
