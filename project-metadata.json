@@ -1,0 +1,80 @@
+{
+  "title": "298.666mhz frequency counter using stm32f103c8t6 & vhf/uhf fm transmitter circuit",
+  "repository_name_suggestion": "298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit",
+  "repository_url": "https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit",
+  "description": "298.666 MHz-class STM32F103C8T6 frequency counter, exact bench frequency generator and VHF/UHF FM transmitter test circuit.",
+  "author": "Yogesh R. Chauhan (mikey-7x)",
+  "author_legal_name": "Yogesh R. Chauhan",
+  "author_also_known_as": [
+    "Chauhan Yogeshkumar R.",
+    "mikey"
+  ],
+  "author_github_username": "mikey-7x",
+  "author_role": "Software Developer | Open-Source Contributor | EC Specialist",
+  "author_education": "Diploma in Electronics and Communication (EC), BBIT, India",
+  "author_url": "https://github.com/mikey-7x",
+  "author_repositories_url": "https://github.com/mikey-7x?tab=repositories",
+  "author_youtube_url": "https://youtube.com/@mikey-7x",
+  "author_blog_url": "https://rtod-yv8.blogspot.com/?m=1",
+  "powered_by": "POWERED BY [mikey:hexoid-sys]",
+  "licence": "mikey-7x Strict Personal & Educational Use Licence",
+  "licence_file": "LICENSE",
+  "notice_file": "NOTICE.md",
+  "authors_file": "AUTHORS.md",
+  "citation_file": "CITATION.cff",
+  "contributing_file": "CONTRIBUTING.md",
+  "security_file": "SECURITY.md",
+  "commercial_use": "prohibited without a separate signed written licence from Yogesh R. Chauhan (mikey-7x)",
+  "target": {
+    "microcontroller": "STM32F103C8T6",
+    "board": "Blue Pill F103C8",
+    "framework": "STM32duino / Arduino",
+    "display": "0.96-inch SSD1306 I2C OLED, 128x64",
+    "counter_input": "PA0",
+    "generator_output": "PA8"
+  },
+  "counter": {
+    "default_timer_clock_mhz": 112,
+    "normal_design_ceiling_mhz": 224,
+    "experimental_display_ceiling_mhz": 298.6666667,
+    "source": "firmware/frequency_counter/frequency_counter.ino"
+  },
+  "generator": {
+    "normal_sweep_hz": [
+      1,
+      10,
+      100,
+      1000,
+      10000,
+      100000,
+      1000000,
+      2000000,
+      4000000,
+      8000000,
+      12000000,
+      18000000,
+      24000000,
+      36000000
+    ],
+    "optional_experimental_steps_hz": [
+      40000000,
+      48000000,
+      56000000,
+      64000000
+    ],
+    "source": "firmware/frequency_generator/frequency_generator.ino"
+  },
+  "topics": [
+    "stm32f103c8t6",
+    "frequency-counter",
+    "stm32",
+    "blue-pill",
+    "embedded-systems",
+    "arduino",
+    "ssd1306",
+    "vhf",
+    "uhf",
+    "fm-transmitter",
+    "rf-electronics"
+  ]
+}

@@ -1,0 +1,363 @@
+mikey-7x STRICT PERSONAL & EDUCATIONAL USE LICENCE
+
+Copyright (c) 2026 Yogesh R. Chauhan (mikey-7x). All rights reserved.
+
+Project: 298.666mhz frequency counter using stm32f103c8t6 &
+         vhf/uhf fm transmitter circuit
+Brand:   POWERED BY [mikey:hexoid-sys]
+Author:  Yogesh R. Chauhan (mikey-7x)
+Also known as: Chauhan Yogeshkumar R.; online pseudonyms
+         "mikey-7x" and "mikey"
+GitHub profile: https://github.com/mikey-7x
+GitHub repositories: https://github.com/mikey-7x?tab=repositories
+Project repository: https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit
+YouTube: https://youtube.com/@mikey-7x
+Blog: https://rtod-yv8.blogspot.com/?m=1
+Contact: Use the GitHub profile or the project repository's
+         commercial-licence issue form.  No email address is
+         published in this licence.
+
+IMPORTANT NOTICE
+
+This is a strict, source-available, proprietary licence.  It is NOT an
+open-source licence, NOT a public-domain dedication, and NOT permission
+for unrestricted copying, redistribution, commercial exploitation or
+industrial use.
+
+By downloading, copying, viewing in a way that creates a copy, building,
+modifying, installing, operating, publishing, distributing or otherwise
+using any Project Material, you agree to every condition in this
+licence.  If you do not agree, do not use the Project Materials and
+delete every copy in your possession or control.
+
+1. DEFINITIONS
+
+1.1 "Author" means Yogesh R. Chauhan, publicly known as mikey-7x
+    (also known as Chauhan Yogeshkumar R. and by the online pseudonym
+    "mikey"), including lawful successors and assigns.
+
+1.2 "Project Materials" means every original part of this project that
+    is owned or controlled by the Author, including without limitation:
+    (a) source code, object code, firmware, comments and configuration;
+    (b) circuit diagrams, schematics, wiring information, calculations,
+        test methods, documentation and photographs supplied by the
+        Author;
+    (c) hardware arrangements and build instructions originating from
+        this project;
+    (d) names, titles, artwork, screenshots, the mikey:hexoid-sys
+        identity, the exact line "POWERED BY [mikey:hexoid-sys]", and
+        every supplied logo or emblem; and
+    (e) modifications, adaptations, translations, ports, compilations
+        and other derivative works based on any of the above.
+
+1.3 "Personal Use" means use by one natural person, at that person's
+    own expense and for that person's private hobby or private study,
+    with no direct or indirect commercial purpose or benefit.
+
+1.4 "Educational Use" means non-commercial teaching, classroom
+    demonstration, student study or academic research where neither the
+    Project Materials nor access to them is sold and where the use is
+    not part of a paid product, paid service, sponsored deliverable or
+    commercial research programme.
+
+1.5 "Commercial Use" means any use connected with money, business,
+    trade, employment duties, client work, production, marketing or an
+    organisation's internal operations.  Commercial Use includes, but
+    is not limited to, selling, renting, leasing, licensing for a fee,
+    paid assembly, paid repair or calibration, paid consulting, paid
+    courses, advertising-supported exploitation intended to generate
+    revenue, fundraising through the Project Materials, manufacture for
+    sale, incorporation into a product or service, industrial use, and
+    any use intended to produce direct or indirect financial benefit.
+
+1.6 "Logo" means the supplied files named
+    "powered-by-mikey-hexoid-sys.svg",
+    "powered-by-mikey-hexoid-sys.png",
+    "mikey-hexoid-sys-mark.svg",
+    "mikey-hexoid-sys-mark.png" and
+    "github-social-preview.png", together with faithful proportional
+    reproductions of them.
+
+2. OWNERSHIP AND RESERVATION OF RIGHTS
+
+2.1 The Author retains all copyright, design, database, trademark,
+    trade-name, goodwill and other intellectual-property rights in the
+    Project Materials, except for third-party material identified in
+    section 13.
+
+2.2 No ownership interest is transferred to you.  Every right not
+    expressly granted in writing in this licence is reserved.
+
+2.3 Publication in a public repository is only publication for the
+    limited purposes stated here.  It does not waive copyright, grant a
+    trademark licence, create an implied licence, or permit a use that
+    this licence prohibits.
+
+3. LIMITED PERMISSION
+
+Subject to complete and continuing compliance with this licence, the
+Author grants you a limited, revocable, non-exclusive,
+non-transferable and non-sublicensable permission to:
+
+(a) read and study the Project Materials;
+(b) download and keep a reasonable number of copies for Personal Use
+    or Educational Use;
+(c) compile and run the firmware on hardware that you lawfully own or
+    are authorised to use for Personal Use or Educational Use;
+(d) construct one or more units solely for your own Personal Use or
+    for bona-fide Educational Use;
+(e) modify the Project Materials privately for Personal Use or
+    Educational Use; and
+(f) distribute an exact or modified copy only when every condition in
+    sections 4 and 5 is satisfied and no Commercial Use is involved.
+
+4. MANDATORY CREDIT, LOGO AND NOTICES
+
+Attribution is a condition of permission, not a courtesy.
+
+4.1 Every copy, modified copy, public display, repository, document,
+    video description, presentation, article, photograph caption,
+    hardware label and software interface that uses or is based on the
+    Project Materials must clearly and legibly include ALL of the
+    following, wherever technically and reasonably possible:
+
+    (a) "Created by mikey-7x" and the name "Yogesh R. Chauhan";
+    (b) the exact line "POWERED BY [mikey:hexoid-sys]";
+    (c) the supplied Logo without distortion, cropping that removes
+        text, recolouring that makes it misleading or illegible, or
+        separation of the mark from the required credit;
+    (d) "Copyright (c) 2026 Yogesh R. Chauhan (mikey-7x). All rights reserved.";
+    (e) a complete, unmodified copy of this licence; and
+    (f) links or clear references to the Author's GitHub profile at
+        https://github.com/mikey-7x and to the original project
+        repository at https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit.
+
+4.2 Credit must be prominent enough that an ordinary viewer can find
+    it without opening an unrelated file or searching through hidden
+    metadata.  A buried, removed, altered, misspelled or minimized
+    credit does not satisfy this section.
+
+4.3 Firmware copies must retain the Author, project-title, licence and
+    powered-by notices in the source headers and embedded identity
+    data.  A device with a display must retain the powered-by startup
+    attribution supplied in the firmware unless the Author gives prior
+    written permission for a replacement placement.
+
+4.4 Hardware copies that are shown publicly, transferred without charge
+    for Educational Use, photographed for publication or documented
+    must carry the credit in section 4.1 on the hardware, enclosure,
+    PCB, manual, project page or accompanying material, in at least
+    one clearly visible location and in the accompanying files.
+
+4.5 You must not state or imply that you are the original creator of
+    material written or designed by Yogesh R. Chauhan (mikey-7x).  You may accurately
+    identify the specific changes that you personally made.
+
+4.6 You must not remove, obscure, encrypt, rename to conceal, replace
+    or circumvent any copyright notice, attribution, Logo, embedded
+    identity string, licence notice or origin information.
+
+5. CONDITIONS FOR ANY REDISTRIBUTION
+
+Any redistribution, including a fork, mirror, archive, classroom hand-
+out, file share or modified release, is permitted only if:
+
+(a) it is entirely free of charge and entirely non-commercial;
+(b) every requirement in section 4 is met;
+(c) this complete licence and the NOTICE file are included unchanged;
+(d) modified files are clearly marked as modified, with the modifier's
+    name and a short description of the changes;
+(e) no recipient is given rights broader than this licence;
+(f) no additional legal, technical or contractual restriction is used
+    to defeat the Author's rights or required attribution;
+(g) the Project Materials are not represented as your own original,
+    independently created project; and
+(h) the redistribution does not suggest sponsorship, partnership,
+    certification, official status or endorsement by the Author.
+
+6. ABSOLUTE COMMERCIAL AND INDUSTRIAL PROHIBITION
+
+Without a separate written commercial licence signed by the Author,
+you must NOT:
+
+(a) sell, offer for sale, rent, lease, lend for a fee, exchange for
+    value, or otherwise commercially supply the Project Materials;
+(b) sell or commercially supply firmware, compiled binaries, source
+    code, circuit boards, kits, assembled counters, generators,
+    transmitters, enclosures, documentation or derivative hardware
+    based on the Project Materials;
+(c) use the Project Materials in manufacturing, production, quality
+    control, industrial testing, workplace operations, client work,
+    paid engineering, paid research or any business process;
+(d) incorporate the Project Materials, in whole or in part, into a
+    commercial product, paid service, subscription, advertisement,
+    monetised application, commercial repository or revenue-generating
+    platform;
+(e) charge for downloading, flashing, assembling, calibrating,
+    supporting, teaching or granting access to the Project Materials,
+    except for a bona-fide non-commercial educational institution's
+    ordinary tuition that is not specifically charged for this project;
+(f) use the project title, Author name, Logo or powered-by identity to
+    market, promote or add value to any goods or services; or
+(g) ask, permit or enable another person to do anything prohibited by
+    this section.
+
+For business, industrial, manufacturing or other Commercial Use,
+contact the Author through https://github.com/mikey-7x before any use
+and obtain a separate signed written licence.  Silence, a repository
+star, a fork, an issue reply or informal conversation is not a
+commercial licence.
+
+7. OTHER PROHIBITIONS
+
+You must NOT:
+
+(a) claim authorship of the Author's work or file a copyright,
+    trademark, design or patent application that attempts to own the
+    Author's contribution;
+(b) register or use a confusingly similar project name, account name,
+    logo or trade dress in a way that misleads users about origin;
+(c) sublicense, assign or transfer this licence or any permission in
+    it, except that a permitted recipient receives rights directly
+    under this same licence;
+(d) use the Project Materials to create a competing commercial product
+    or a commercial dataset, model, service or design library;
+(e) remove safety warnings or present experimental overclocked or RF
+    operation as certified, guaranteed or suitable for every board;
+(f) use the Project Materials in violation of applicable radio,
+    electrical-safety, export, privacy or other law; or
+(g) use the Project Materials in a life-support, medical, aviation,
+    nuclear, emergency-response, weapons, critical-infrastructure or
+    other safety-critical application.
+
+8. LOGO AND NAME RIGHTS
+
+8.1 The Logo, the names "Yogesh R. Chauhan", "Chauhan Yogeshkumar R.",
+    "mikey-7x" and "mikey" when used for this project, the identity
+    "[mikey:hexoid-sys]" and the line
+    "POWERED BY [mikey:hexoid-sys]" are used as source identifiers of
+    the Author.  This licence grants only the limited right to
+    reproduce them for mandatory attribution under section 4.
+
+8.2 Proportional resizing is permitted.  A faithful one-colour
+    reproduction is permitted only when required by a monochrome PCB,
+    enclosure or display process and only if all text remains legible.
+
+8.3 You must not redraw the Logo in a confusingly altered form, use it
+    as your own logo, apply it to unrelated products, or imply that
+    the Author endorses your modification, organisation or activity.
+
+9. MODIFICATIONS AND FEEDBACK
+
+9.1 A modification does not remove the original material from this
+    licence.  The complete modified work remains subject to this
+    licence, although a contributor retains whatever lawful rights the
+    contributor holds in a genuinely original, separable addition.
+
+9.2 If you send modifications, corrections, ideas, test results or
+    other feedback to the Author for inclusion in the project, you
+    grant the Author a perpetual, worldwide, royalty-free right to use
+    that submitted material in the project and related documentation,
+    with credit where reasonably practical.  Do not submit material
+    that you do not have the right to provide.
+
+10. TERMINATION
+
+10.1 This licence terminates automatically and immediately if you
+     breach any condition, remove required credit, use the Project
+     Materials commercially without permission, misrepresent origin,
+     or challenge the Author's ownership in bad faith.
+
+10.2 On termination, you must stop all use and distribution, remove
+     public copies under your control, and delete or destroy your
+     copies of the Project Materials except where retention is
+     required by law.
+
+10.3 Termination does not limit the Author's right to seek takedown,
+     injunctive relief, damages, costs or any other remedy available
+     under applicable law.
+
+10.4 A terminated licence is not reinstated unless the Author expressly
+     reinstates it in writing.
+
+11. ENFORCEMENT AND UNAUTHORISED USE
+
+Unauthorised copying, unattributed use, false authorship claims,
+commercial exploitation, removal of notices, or misuse of the Logo
+may infringe copyright, trademark, design, passing-off, unfair-
+competition or other legal rights.  The Author reserves the right to
+pursue every lawful and equitable remedy available, including
+repository takedown requests, platform reports, injunctions, recovery
+of profits or damages, and legal costs where recoverable.
+
+Nothing in this section requires the Author to monitor use or to give
+a warning before exercising a legal right.
+
+12. SAFETY, RF AND EXPERIMENTAL-HARDWARE WARNING
+
+The Project Materials are experimental electronics.  Parts of the
+counter firmware operate an STM32F103 above its 72 MHz specified
+system-clock limit, and the VHF/UHF transmitter circuit can generate
+radio-frequency energy.  Results can vary by silicon, board, waveform,
+layout, components, temperature and test equipment.  Experimental
+"MHz EXP" readings are not certification of an emitted fundamental.
+
+You are solely responsible for safe construction and operation, input
+voltage limits, anti-static handling, thermal and electrical safety,
+spectrum authorisation, interference prevention and compliance with
+every law and regulation that applies where you build or operate the
+hardware.  Do not connect an antenna or transmit unless you are
+legally authorised and the equipment, frequency, power, emissions and
+operating conditions are lawful.  Prefer a properly rated dummy load,
+shielded test setup and suitable measurement equipment.
+
+13. THIRD-PARTY MATERIAL
+
+Microcontroller hardware, vendor headers, STM32duino or Arduino
+framework components, compiler runtimes, fonts and other third-party
+material remain governed by their own licences and notices.  This
+licence applies to the Author's original project material and does not
+claim ownership of independent third-party rights.  Where a third-
+party component is required to build the firmware, you must also
+comply with that component's licence.
+
+14. NO WARRANTY AND LIMITATION OF LIABILITY
+
+THE PROJECT MATERIALS ARE PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT
+WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+ACCURACY, SAFETY, NON-INFRINGEMENT, AVAILABILITY OR ERROR-FREE
+OPERATION.
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE AUTHOR IS NOT LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE OR
+OTHER LOSS OR DAMAGE, INCLUDING HARDWARE DAMAGE, DATA LOSS, PERSONAL
+INJURY, REGULATORY PENALTIES, LOST PROFITS OR BUSINESS INTERRUPTION,
+ARISING FROM ACCESS TO, USE OF, MODIFICATION OF OR INABILITY TO USE
+THE PROJECT MATERIALS.
+
+15. GENERAL
+
+15.1 If a court or competent authority finds part of this licence
+     unenforceable, the remaining parts continue in effect and the
+     affected part must be interpreted as closely as possible to its
+     original protective intent.
+
+15.2 Failure to enforce a condition on one occasion is not a waiver of
+     that condition or any later breach.
+
+15.3 Headings are for reading convenience and do not expand any grant.
+
+15.4 This licence is the complete permission statement for the
+     Author's Project Materials unless the Author signs a separate
+     written agreement with you.
+
+15.5 For commercial licensing, industrial use, bulk educational
+     deployment outside section 1.4, sponsorship, consulting or any
+     permission not expressly granted above, contact:
+
+         Yogesh R. Chauhan (mikey-7x)
+         GitHub: https://github.com/mikey-7x
+         Project: https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit
+
+END OF LICENCE

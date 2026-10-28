@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you cite or reuse this project for permitted personal or educational work, credit Yogesh R. Chauhan (mikey-7x), retain POWERED BY [mikey:hexoid-sys] and the supplied logo, and follow the repository LICENSE."
+title: "298.666mhz frequency counter using stm32f103c8t6 & vhf/uhf fm transmitter circuit"
+authors:
+  - family-names: "Chauhan"
+    given-names: "Yogesh R."
+    alias: "mikey-7x"
+    website: "https://github.com/mikey-7x"
+repository-code: "https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit"
+url: "https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit"
+license-url: "https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit/blob/main/LICENSE"
+date-released: 2026-10-27
+identifiers:
+  - type: url
+    value: "https://github.com/mikey-7x"
+    description: "Official GitHub profile of Yogesh R. Chauhan (mikey-7x)"
+keywords:
+  - STM32F103C8T6
+  - frequency counter
+  - Blue Pill
+  - embedded systems
+  - SSD1306
+  - VHF
+  - UHF
+  - FM transmitter
+  - mikey:hexoid-sys

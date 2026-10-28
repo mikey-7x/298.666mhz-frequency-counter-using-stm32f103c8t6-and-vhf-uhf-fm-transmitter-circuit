@@ -1,0 +1,19 @@
+# Arduino and compiler output
+build/
+*.bin
+*.elf
+*.hex
+*.map
+*.o
+*.a
+*.d
+
+# Local editors and operating systems
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python caches from repository checks
+__pycache__/
+*.py[cod]
