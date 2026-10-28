@@ -1,0 +1,1 @@
+date,tester,counter_board,actual_sysclk_mhz,displayed_max_mhz,source,expected_hz,displayed_value,displayed_unit,gate_label,raw_count_N,gate_seconds,calculated_hz_from_N,CA,CB,supply_volts,independent_check,notes

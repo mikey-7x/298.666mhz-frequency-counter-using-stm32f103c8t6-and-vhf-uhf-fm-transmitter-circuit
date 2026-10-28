@@ -1,0 +1,45 @@
+Public firmware build results
+POWERED BY [mikey:hexoid-sys]
+Created by mikey-7x — Yogesh R. Chauhan
+GitHub: https://github.com/mikey-7x
+Project: https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit
+
+Target: STMicroelectronics:stm32:GenF1:pnum=BLUEPILL_F103C8,usb=HID
+Compiler setting: --warnings all
+Result: all listed builds completed with zero warnings.
+
+Counter default 112 MHz
+  Flash:   37148 bytes
+  Globals: 2964 bytes
+
+Counter variant 96 MHz
+  Flash:   37136 bytes
+  Globals: 2960 bytes
+
+Counter variant 72 MHz
+  Flash:   36800 bytes
+  Globals: 2960 bytes
+
+Generator default normal sweep
+  Flash:   18208 bytes
+  Globals: 1616 bytes
+
+Generator experimental top sweep to 64 MHz
+  Flash:   19384 bytes
+  Globals: 2220 bytes
+
+Generator fixed 64 MHz diagnostic
+  Flash:   18880 bytes
+  Globals: 2204 bytes
+
+Embedded identity found in both default ELF images:
+POWERED BY [mikey:hexoid-sys] | Author: Yogesh R. Chauhan (mikey-7x) | Also known as: Chauhan Yogeshkumar R. | GitHub: https://github.com/mikey-7x | Repositories: https://github.com/mikey-7x?tab=repositories | Project: https://github.com/mikey-7x/298.666mhz-frequency-counter-using-stm32f103c8t6-and-vhf-uhf-fm-transmitter-circuit | YouTube: https://youtube.com/@mikey-7x | Blog: https://rtod-yv8.blogspot.com/?m=1 | Copyright (c) 2026 Yogesh R. Chauhan (mikey-7x). All rights reserved. | Licence: mikey-7x Strict Personal & Educational Use Licence
+
+SHA-256
+24df5938287b313eb7fd4653752d81625f948801efdf0ea38a14e5690009a683  firmware/frequency_counter/frequency_counter.ino
+bec8de8cff0aa249fae40297cd8c8d16832a3e063e471e7083b756ecd09fe174  firmware/frequency_generator/frequency_generator.ino
+3105d71a35f45e4c67f90666730b9bbbd348f424ff3eb2ffdbf37f326971ad3a  LICENSE
+5fc93c3408668ae1da65a769f7d3dac7bb0a03804a76d1b584db6677ba819e5c  README.md
+74e25542ba118d9788542a5361f6dd1d70d012e18235b77e961482b43c4b2760  NOTICE.md
+851a6611f807cf0686063f5b498e15ca397c1294e7febbf8a38283a9636286a0  assets/powered-by-mikey-hexoid-sys.svg
+4f43fcb4557eab027e1d8ca3ee6df4450b3d0f542c6b15e9b88ee5f797fbe293  hardware/complete-circuit-diagram.png
