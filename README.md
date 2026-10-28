@@ -5,8 +5,7 @@
 </p>
 
 <p align="center">
-  <strong>Created by <a href="https://github.com/mikey-7x">mikey-7x</a> — Yogesh R. Chauhan</strong><br>
-  <strong>POWERED BY [mikey:hexoid-sys]</strong>
+  <strong>Created by <a href="https://github.com/mikey-7x">mikey-7x</a> — Yogesh R. Chauhan</strong>
 </p>
 
 <p align="center">
