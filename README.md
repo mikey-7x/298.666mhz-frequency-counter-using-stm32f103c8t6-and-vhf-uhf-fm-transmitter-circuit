@@ -260,7 +260,7 @@ The 112 MHz and 96 MHz settings exceed the STM32F103's specified 72 MHz system-c
 
 Source: [`firmware/frequency_generator/frequency_generator.ino`](firmware/frequency_generator/frequency_generator.ino)
 
-The generator provides an exact automatic bench sequence. Each supported step dwells for 15 seconds.
+The generator provides an automatic bench sequence with exact nominal timer divisors. Each supported step dwells for 15 seconds. Actual output accuracy depends on the clock reference and board stability; use an independent instrument when accuracy matters.
 
 ### Default normal-clock sequence
 
@@ -269,6 +269,10 @@ The generator provides an exact automatic bench sequence. Each supported step dw
 1 kHz, 10 kHz, 100 kHz,
 1 MHz, 2 MHz, 4 MHz, 8 MHz, 12 MHz, 18 MHz, 24 MHz, 36 MHz
 ```
+
+### Requested diagnostic list (`SWEEP_MODE 1`)
+
+Setting `SWEEP_MODE` to `1` selects the original requested list, but does **not** make every requested frequency physically attainable. With the 72 MHz timer clock, the entries from 1 Hz through 1 MHz in that list have supported nominal divisors. The requested 10, 20, 27, 33, 50, 68, 72 and 80 MHz entries are unsupported in this mode: PA8 is forced LOW and the LED repeats four flashes instead of substituting an inaccurate output. This mode cannot be combined with `TOP_EXPERIMENT_64MHZ` or fixed-frequency diagnostics.
 
 ### Optional experimental top sequence
 
@@ -289,13 +293,15 @@ The authored code's exact top TIM1 step is **64 MHz**, not 65 MHz. The hand-draw
 ### Button and LED behaviour
 
 - Short press and release PB12: advance to the next step.
-- Hold PB12 for at least one second: pause or resume the automatic sweep without stopping the present TIM1 output.
+- Hold PB12 for at least one second: pause or resume the automatic sweep without stopping the present TIM1 output, except during the SRAM-isolated 64 MHz step described below.
 - Single heartbeat: automatic sweep.
 - Double heartbeat: paused.
 - Three flashes: successful boot configuration.
 - Two flashes: supported new step.
 - Four repeated flashes: unsupported requested step; PA8 is forced LOW.
 - Five repeated flashes: timer-clock/configuration fault.
+
+**64 MHz button limitation:** PB12 is not read during the SRAM-isolated 64 MHz dwell. In automatic sweep the step returns after its timed dwell; button presses during that dwell are ignored. If 64 MHz is entered while the sweep is paused, the hold is indefinite and PB12 cannot resume it: reset or power-cycle the generator to leave that state. The fixed 64 MHz diagnostic also holds until reset or power-off. This is a limitation of the current firmware, not a claim that the button works in this state.
 
 Fixed diagnostic settings are available through `FIXED_TEST_8MHZ`, `FIXED_TEST_36MHZ` and `FIXED_TEST_64MHZ`. Only one may be selected, and PB12 is ignored completely in a fixed test so a diagnostic source cannot drift to another table entry.
 
@@ -430,6 +436,7 @@ A reusable record sheet is provided in [`docs/test-record.csv`](docs/test-record
 │   └── pull_request_template.md
 ├── assets/
 │   ├── README.md
+│   ├── project-title-logo.png
 │   ├── github-social-preview.png
 │   ├── powered-by-mikey-hexoid-sys.svg
 │   ├── powered-by-mikey-hexoid-sys.png
@@ -491,7 +498,6 @@ This project is released only under the custom **mikey-7x Strict Personal & Educ
 
 The summary above is for convenience only. The complete [`LICENSE`](LICENSE) controls.
 
----
 ---
 
 ## About the author

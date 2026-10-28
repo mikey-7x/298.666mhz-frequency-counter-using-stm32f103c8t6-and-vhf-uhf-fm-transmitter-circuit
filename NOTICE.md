@@ -43,7 +43,7 @@ Also display one of these supplied logo files:
 - `assets/mikey-hexoid-sys-mark.png`
 - `assets/github-social-preview.png`
 
-The full-colour wide lockup is preferred. The square mark may accompany the exact powered-by text where space is limited. Do not crop out `[mikey:hexoid-sys]`, distort the artwork, imply endorsement, or use the identity on unrelated work.
+The transparent main logo is preferred. The square mark may accompany the exact powered-by text where space is limited. Do not crop out `[mikey:hexoid-sys]`, distort the artwork, imply endorsement, or use the identity on unrelated work.
 
 ## Commercial and industrial use
 
